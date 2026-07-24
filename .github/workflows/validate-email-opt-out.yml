@@ -1,0 +1,20 @@
+name: Validar opt-out dos emails
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-email-opt-out:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Validar opt-out do Resend
+        run: node scripts/validate-email-opt-out.mjs
