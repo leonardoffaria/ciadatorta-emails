@@ -5,47 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cia da Torta | Primavera à Mesa</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f0f0f2;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .email-wrap {
-      width: 600px;
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-    }
-
-    .email-img {
-      display: block;
-      width: 600px;
-      max-width: 100%;
-      height: auto;
-      border: 0;
-    }
-
-    .unsubscribe {
-      display: block;
-      width: 600px;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 10px 0 14px;
-      background: #5a1800;
-      color: #ffffff;
-      text-align: center;
-      font-size: 11px;
-      text-decoration: underline;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    @media only screen and (max-width: 620px) {
-      .email-wrap,
-      .unsubscribe {
-        width: 100% !important;
-      }
+    body { margin:0; padding:0; background:#f0f0f2; font-family: Arial, Helvetica, sans-serif; color:#111111; }
+    .email-wrap { width:600px; max-width:600px; margin:0 auto; background:#ffffff; }
+    .hero { display:block; width:600px; max-width:100%; height:auto; border:0; }
+    .content { padding:38px 66px 36px; text-align:center; font-size:18px; line-height:1.42; }
+    .content p { margin:0 0 26px; }
+    .content strong { font-weight:700; }
+    .button { display:inline-block; margin:0 0 20px; padding:13px 31px; border-radius:999px; background:#c92205; color:#ffb22b; font-weight:800; font-size:14px; line-height:1; text-decoration:none; text-transform:uppercase; }
+    .note { margin:0; color:#111111; font-size:10px; font-style:italic; line-height:1.3; }
+    .footer { background:#5a1800; color:#ffffff; padding:30px 70px 46px; font-size:10px; line-height:1.35; }
+    .footer-grid { display:table; width:100%; }
+    .footer-col { display:table-cell; vertical-align:top; }
+    .footer-brand { width:36%; padding-right:22px; }
+    .footer-links { width:34%; padding-right:22px; padding-top:46px; }
+    .footer-contact { width:30%; padding-top:14px; text-align:left; }
+    .logo { margin:0 0 34px; color:#ffffff; font-weight:800; font-size:24px; line-height:.82; letter-spacing:-.7px; }
+    .logo span { display:block; font-size:15px; font-weight:400; line-height:.95; }
+    .footer p { margin:0; }
+    .footer a { color:#ffffff; text-decoration:none; }
+    .social { display:inline-block; margin:0 0 36px; padding:7px 25px; border:1px solid #ffffff; border-radius:999px; background:#647859; color:#ffffff; font-size:11px; font-weight:700; text-decoration:none; text-transform:uppercase; }
+    .contact-line { display:block; margin:0 0 9px; }
+    .unsubscribe { display:block; width:600px; max-width:600px; margin:0 auto; padding:10px 0 14px; background:#5a1800; color:#ffffff; text-align:center; font-size:11px; text-decoration:underline; font-family:Arial, Helvetica, sans-serif; }
+    @media only screen and (max-width:620px) {
+      .email-wrap, .unsubscribe { width:100% !important; }
+      .content { padding-left:28px !important; padding-right:28px !important; font-size:16px !important; }
+      .footer { padding-left:28px !important; padding-right:28px !important; }
+      .footer-grid, .footer-col { display:block !important; width:100% !important; }
+      .footer-links, .footer-contact { padding-top:24px !important; }
     }
   </style>
 </head>
@@ -57,16 +43,44 @@
     &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
   </div>
   <div class="email-wrap">
-    <img class="email-img" src="https://raw.githubusercontent.com/leonardoffaria/ciadatorta-emails/main/primavera-2309/email.png" width="600" alt="Cia da Torta: Primavera à Mesa" usemap="#primavera-2309-links">
-    <map name="primavera-2309-links">
+    <img class="hero" src="https://raw.githubusercontent.com/leonardoffaria/ciadatorta-emails/main/primavera-2309/banner.png" width="600" alt="Cia da Torta: Primavera à Mesa, 10% OFF no Pix" usemap="#primavera-2309-banner-links">
+    <map name="primavera-2309-banner-links">
       <area shape="rect" coords="133,304,247,342" href="https://ciadatorta.com.br/primavera-a-mesa?utm_source=2309&amp;utm_medium=email&amp;utm_campaign=primavera" target="_blank" alt="Peça agora">
-      <area shape="rect" coords="220,792,380,834" href="https://ciadatorta.com.br/primavera-a-mesa?utm_source=2309&amp;utm_medium=email&amp;utm_campaign=primavera" target="_blank" alt="Faça o seu pedido">
-      <area shape="rect" coords="403,947,529,974" href="https://www.instagram.com/ciadatortaoficial/" target="_blank" alt="Nos siga">
-      <area shape="rect" coords="236,1003,337,1016" href="https://ciadatorta.com.br/perguntas-frequentes" target="_blank" alt="Perguntas Frequentes">
-      <area shape="rect" coords="236,1018,336,1030" href="https://ciadatorta.com.br/privacidade" target="_blank" alt="Privacidade e Cookies">
-      <area shape="rect" coords="236,1032,304,1044" href="https://ciadatorta.com.br/termos-de-uso" target="_blank" alt="Termos de uso">
-      <area shape="rect" coords="236,1046,274,1058" href="https://ciadatorta.com.br/contato" target="_blank" alt="Contato">
     </map>
+
+    <main class="content">
+      <p>A primavera chegou! 🌸</p>
+      <p>É a estação perfeita para aproveitar refeições mais leves, fazer uma pausa gostosa no meio do dia ou reunir quem você ama em volta da mesa.</p>
+      <p>E na Cia da Torta, não faltam opções para acompanhar esses momentos: mini tortas salgadas e doces, mini quiches e sucos refrescantes para completar.</p>
+      <p><strong>Temos produtos a partir de R$8,49 e, pagando no PIX, você ainda aproveita 10% OFF na compra.</strong></p>
+      <p>Escolha os seus favoritos e deixe a primavera ainda mais gostosa. 💛</p>
+      <a class="button" href="https://ciadatorta.com.br/primavera-a-mesa?utm_source=2309&amp;utm_medium=email&amp;utm_campaign=primavera" target="_blank">Faça o seu pedido</a>
+      <p class="note">Ofertas válidas por tempo limitado.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <p class="logo"><span>- cia da -</span>TORTA</p>
+          <p>Sabores artesanais feitos com carinho para o seu dia a dia. Tortas e quiches entregues na sua porta.</p>
+        </div>
+        <div class="footer-col footer-links">
+          <p>
+            <a href="https://ciadatorta.com.br/perguntas-frequentes" target="_blank">Perguntas Frequentes</a><br>
+            <a href="https://ciadatorta.com.br/privacidade" target="_blank">Privacidade e Cookies</a><br>
+            <a href="https://ciadatorta.com.br/termos-de-uso" target="_blank">Termos de uso</a><br>
+            <a href="https://ciadatorta.com.br/contato" target="_blank">Contato</a>
+          </p>
+        </div>
+        <div class="footer-col footer-contact">
+          <a class="social" href="https://www.instagram.com/ciadatortaoficial/" target="_blank">◎ Nos siga!</a>
+          <p>
+            <span class="contact-line">☏ (11) 92456-5515</span>
+            <span class="contact-line">✉ contato@ciadatorta.com.br</span>
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
   <a class="unsubscribe" href="{{unsubscribe_url}}">Descadastre-se</a>
 </body>
