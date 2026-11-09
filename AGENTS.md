@@ -1,4 +1,17 @@
-﻿# AGENTS.md — Cia da Torta Emails
+# AGENTS.md — Cia da Torta Emails
+
+
+## Publicação de campanhas atuais do Módulo Works
+
+As campanhas atuais, como `black-november-1111`, seguem o contrato `{{unsubscribe_url}}` dos modelos Light4You, Santo Congelado e Arte Foods. O código atual do Centro de Comando (`marketing/peca-email.ts`) rejeita o token legado do Resend para esse fluxo, e o Módulo Works (`crm/message-content.ts`) substitui `{{unsubscribe_url}}` no envio. Não trocar o token da peça por um de Broadcast para publicar a prévia.
+
+Para essas campanhas, a validação obrigatória é explícita e restrita à pasta publicada:
+
+```bash
+node scripts/validate-email-opt-out.mjs --works black-november-1111
+```
+
+Ela exige exatamente um token, no link visível de descadastro, e recusa os placeholders legados. A validação sem argumentos e as regras de Resend abaixo ficam preservadas para o acervo de Broadcasts. As 23 campanhas já publicadas entre 28/09 e 06/11 usam Works e não são alteradas nesta publicação. Toda publicação exige autorização; disparo continua sendo uma ação separada.
 
 ## Escopo do repositório
 

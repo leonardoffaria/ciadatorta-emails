@@ -1,11 +1,20 @@
-﻿import { readdir, readFile } from 'node:fs/promises';
-import { join, relative } from 'node:path';
+import { readdir, readFile } from 'node:fs/promises';
+import { join, relative, resolve, sep } from 'node:path';
 import process from 'node:process';
 
-const root = process.cwd();
+const repositoryRoot = process.cwd();
+const args = process.argv.slice(2);
+const works = args[0] === '--works';
+if (args.length && (!works || args.length !== 2)) {
+  throw new Error('Uso: node scripts/validate-email-opt-out.mjs [--works pasta-da-campanha]');
+}
+const root = works ? resolve(repositoryRoot, args[1]) : repositoryRoot;
+if (works && !root.startsWith(repositoryRoot + sep)) {
+  throw new Error('Informe uma pasta de campanha dentro do repositório.');
+}
 const previewMarker = 'EMAIL_PREVIEW_ONLY';
-const unsubscribeToken = '{{{RESEND_UNSUBSCRIBE_URL}}}';
-const legacyTokens = ['%unsubscribe%', '#unsubscribe-preview'];
+const unsubscribeToken = works ? '{{unsubscribe_url}}' : '{{{RESEND_UNSUBSCRIBE_URL}}}';
+const legacyTokens = ['%unsubscribe%', '#unsubscribe-preview', ...(works ? ['RESEND_UNSUBSCRIBE_URL'] : [])];
 
 async function listHtmlFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -42,6 +51,7 @@ function hasValidUnsubscribeAnchor(html) {
 
 const htmlFiles = (await listHtmlFiles(root)).sort();
 const failures = [];
+if (htmlFiles.length === 0) failures.push('Nenhum HTML de e-mail encontrado para validar.');
 let emailCount = 0;
 let previewCount = 0;
 
